@@ -1,5 +1,5 @@
 {
-  "name": "star-trinity-genome-guided",
+  "name": "star_trinity_genome_guided",
   "title": "Star for genome guided trinity",
   "summary": "yet another star for genome guide trinity",
   "dxapi": "1.0.0",
@@ -52,7 +52,7 @@
   ],
   "runSpec": {
     "interpreter": "python2.7",
-    "file": "src/star-trinity-genome-guided.py",
+    "file": "src/star_trinity_genome_guided.py",
     "systemRequirements": {
       "*": {
         "instanceType": "mem3_ssd1_x16"
