@@ -1,0 +1,67 @@
+{
+  "name": "star-trinity-genome-guided",
+  "title": "Star for genome guided trinity",
+  "summary": "yet another star for genome guide trinity",
+  "dxapi": "1.0.0",
+  "version": "v0.01",
+  "inputSpec": [{
+    "name" : "left_reads",
+    "class" : "file",
+    "optional" : false,
+    "patterns" : [
+      "*fq.gz",
+      "*fasta.gz"
+    ],
+    "help" : "left reads"
+
+  },
+
+  {"name" : "right_reads",
+  "class" : "file",
+  "optional" : false,
+  "patterns" : [
+    "*fq.gz",
+    "*fasta.gz"
+  ],
+  "help" : "right reads"
+
+  },
+  { "name" :  "genome_index_dir",
+    "class" : "file",
+    "optional" : false,
+    "patterns" : [
+      "genomeDir.tar.gz"
+    ],
+    "help" : "genome directory must be called genomeDir"
+  },
+    {"name" : "insert_size",
+    "class" : "string",
+    "optional" : true
+    }
+
+
+  ],
+  "outputSpec": [
+    {
+      "name"  : "output_bam",
+      "class" : "file",
+      "patterns" : [
+        "*.bam"
+      ]
+    }
+  ],
+  "runSpec": {
+    "interpreter": "python2.7",
+    "file": "src/star-trinity-genome-guided.py",
+    "systemRequirements": {
+      "*": {
+        "instanceType": "mem3_ssd1_x16"
+      }
+    },
+    "distribution": "Ubuntu",
+    "release": "12.04"
+  },
+  "access": {
+    "project": "CONTRIBUTE"
+  }
+}
